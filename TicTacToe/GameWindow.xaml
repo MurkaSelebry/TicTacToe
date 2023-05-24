@@ -1,0 +1,55 @@
+﻿<Window x:Class="TicTacToe.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe"
+        mc:Ignorable="d"
+        Title="GameWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
+            <TextBlock Text="Player 1: " FontWeight="Bold"/>
+            <TextBlock x:Name="Player1NameLabel"/>
+            <TextBlock Text=" (X)" Margin="10,0,0,0"/>
+            <TextBlock Text="Player 2: " FontWeight="Bold" Margin="20,0,0,0"/>
+            <TextBlock x:Name="Player2NameLabel"/>
+            <TextBlock Text=" (O)" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <Grid x:Name="GameBoardGrid" Grid.Row="1" Margin="10">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="40"/>
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <!-- Repeat the RowDefinition for a total of 25 rows -->
+                <!-- ... -->
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <!-- Repeat the ColumnDefinition for a total of 25 columns -->
+                <!-- ... -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Repeat the following Button elements for a total of 625 buttons -->
+            <Button Grid.Row="0" Grid.Column="0" Content="" Tag="0" Click="CellButton_Click"/>
+            <!-- ... -->
+        </Grid>
+
+        <TextBlock x:Name="GameStatusLabel" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0,20"/>
+    </Grid>
+</Window>
